@@ -32,6 +32,10 @@ when you install Linkr
 : link.body => "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 : ansitional//EN\" \"http://www.w3.org/TR/xh".......</body></html>"
 
+** TODO
+
+- refactor code
+
 ** Contributing
 - Fork the project
 - Send a pull request
