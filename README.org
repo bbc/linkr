@@ -26,7 +26,9 @@ when you install Linkr
 : Linkr.resolve("http://bbc.in/pdTHqe") => http://www.bbc.co.uk
 :
 : # if you need more info
-: link = Linkr.new("http://bbc.in/pdTHqe") 
+: link = Linkr.new("http://bbc.in/pdTHqe", {
+:   redirect_limit => 10 # default 5
+: }) 
 : link.body => "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 : ansitional//EN\" \"http://www.w3.org/TR/xh".......</body></html>"
 
