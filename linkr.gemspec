@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Duncan Robertson"]
   s.email       = ["duncan.robertson@bbc.co.uk"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/bbcrd/Linkr"
   s.summary     = %q{Resolves urls to the canonical version}
   s.description = %q{Resolves urls to the canonical version. It does this by following redirects in the headers or body of the destination url.}
   
