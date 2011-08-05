@@ -17,6 +17,21 @@ class TestLinkr < Test::Unit::TestCase
     assert_equal l.response.class, Net::HTTPOK 
   end
 
+  def test_normal_link
+    FakeWeb.register_uri(:get, "http://www.bbc.co.uk",  :status => ["200", "OK"], :body => "Hello World")
+    assert_equal  Linkr.resolve("http://www.bbc.co.uk"), "http://www.bbc.co.uk"
+  end
+
+  def test_internal_error
+    FakeWeb.register_uri(:get, "http://www.bbc.co.uk",  :status => ["500", "Internal Error"])
+    assert_equal  Linkr.resolve("http://www.bbc.co.uk"), "http://www.bbc.co.uk"
+  end
+
+  def test_unauthorized
+    FakeWeb.register_uri(:get, "http://www.bbc.co.uk",  :body => "Unauthorized", :status => ["401", "Unauthorized"])
+    assert_equal  Linkr.resolve("http://www.bbc.co.uk"), "http://www.bbc.co.uk"
+  end
+
   def test_some_invalid_urls
     # These are invalid based on a regular expression
     # /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix

@@ -34,7 +34,8 @@ when you install Linkr
 
 ** TODO
 
-- refactor code
+- currently the passed url is returned unless it is redrected, so 500 errors for example are not reflected
+- refactor resolve code
 
 ** Contributing
 - Fork the project
