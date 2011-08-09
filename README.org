@@ -32,12 +32,13 @@ when you install Linkr
 : link.body => "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Tr
 : ansitional//EN\" \"http://www.w3.org/TR/xh".......</body></html>"
 
-** TODO
+** Todo
 
 - currently the passed url is returned unless it is redrected, so 500 errors for example are not reflected
 - refactor resolve code
 
 ** Contributing
+
 - Fork the project
 - Send a pull request
 - Don't touch the .gemspec, I'll do that when I release a new version
